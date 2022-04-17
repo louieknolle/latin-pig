@@ -18,16 +18,25 @@ function pigLatin(word) {
   }
   const vowels = "aeiou";
   const firstLetter = word.charAt(0);
+  const secondLetter = word.charAt(1);
+  let letters = word.split("");
 
   if(vowels.includes(firstLetter)) {
     return word + "way";
+  } else if (!vowels.includes(letters[0]) && firstLetter === 'q') {
+    // let letters = word.split("");
+    let quWord = "";
+    let twoLetters = letters.slice(2);
+    
+    return (twoLetters.join("") + "quay");
   } else {
-    let firstConsonant = word.slice(0);
+    let firstConsonant = "";
     let letters = word.split("");
     for(let i = 0; i < letters.length; i++) {
       if(!vowels.includes(letters[0])) {
-          letters.join("") + firstConsonant + "ay";
+          firstConsonant += letters.shift();
       }
     }
+    return (letters.join("") + firstConsonant + "ay");
   }
-}
+} 

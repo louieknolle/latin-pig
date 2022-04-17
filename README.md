@@ -12,6 +12,10 @@ Test: "For words starting with one consonant, it will move the consonant to the 
 Code: pigLatin("t");
 expected output: "tay"
 
+Test: "For words starting with multiple consonants, it will move the first consecutive consonants to the end and add 'ay'."
+Code: pigLatin("tr");
+expected output("tray")
+
 
  
 1) return empty string "" if an empty string is submitted
